@@ -33,6 +33,7 @@ int main()
 
     for (int i = 0; i < numInputs; i++) {
         handleOneInput();
+        cout << endl;
     }
 }
 
@@ -68,12 +69,6 @@ void handleOneInput(void)
         getline(cin, line);
     }
 
-//    cout << "Who has most one: " << names[who_get_most_one(votes)] << endl;
-//    cout << "Who get more than 50% votes: " << who_takes_more_than_50_percent(votes) << endl;
-//    cout << "Eliminating..." << endl;
-//    eliminateLowestOnesAndRearrange(votes, names);
-//    cout << "Who get more than 50% votes: " << who_takes_more_than_50_percent(votes) << endl;
-
     bool isAllTiredFlag = false;
     while (who_takes_more_than_50_percent(votes) == -1) {
         if (isAllTied(votes) == true) {
@@ -84,6 +79,9 @@ void handleOneInput(void)
 
             // set isAllTiredFlag
             isAllTiredFlag = true;
+
+            // exit the loop
+            break;
         } else {
             eliminateLowestOnesAndRearrange(votes, names);
         }
