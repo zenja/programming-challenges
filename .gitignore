@@ -30,3 +30,4 @@ Session.vim
 # Input file and directories
 /input
 /inputs/
+/extra/input
